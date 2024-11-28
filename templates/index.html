@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificación de Mensaje</title>
+</head>
+<body>
+    <div>
+        <h2>Clasificador de Mensaje</h2>
+        <form action="/predict" method="POST">
+            <div>
+                <label for="text">Introduce un comentario:</label>
+                <textarea name="text" rows="5" cols="40" required></textarea>
+            </div>
+            <div>
+                <button type="submit">Analizar Sentimiento</button>
+            </div>
+        </form>
+        
+        {% if prediction_text %}
+            <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
